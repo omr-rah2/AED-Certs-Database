@@ -1,1 +1,398 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+   <meta charset = "UTF-8" />
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+    <title> Medical Assistant Certification - AED Resource Hub </title>
+    <link href= "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+       <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" rel="stylesheet" />
+<style>
+* { 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+  body {
+    font-family: 'Source Sans 3' , sans-serif;
+    background- color: #ffffff;
+    color: #1a1a1a;
+  }
+
+  .ma-hero {
+    background: #64160e;
+    padding: 2.5rem 2 rem 2 rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ma-hero::before {
+    content: ' ';
+    position: absolute;
+    top:-40px;
+    right:-40px;
+    width: 200px;
+    height 200px;
+    border-radius 50%;
+    background: rgba (255, 255, 255, 0.05);
+  }
+   .ma-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: 60px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+    }
+  
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255,255, 0.7);
+    font-size:13px;
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .back-link:hover {
+      color: #fff;
+    }
+
+  -cert-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+  }
+  .ma-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+ 
+    .ma-subtitle {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+      max-width: 480px;
+    }
+ 
+    .content-area {
+      padding: 0 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+ 
+    .section {
+      margin-top: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.5px solid #e5e5e5;
+    }
+ 
+    .section:last-child {
+      border-bottom: none;
+    }
+ 
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0.5rem;
+    }
+ 
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #64160e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+ 
+    .section-icon i {
+      color: #fff;
+      font-size: 16px;
+    }
+ 
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+ 
+    .section-desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      padding-left: 48px;
+    }
+ 
+    .resource-list {
+      list-style: none;
+      padding-left: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+ 
+    .resource-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+ 
+    .resource-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #64160e;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+ 
+    .resource-link {
+      font-size: 14px;
+      color: #64160e;
+      text-decoration: none;
+      font-weight: 500;
+      line-height: 1.5;
+      border-bottom: 0.5px solid transparent;
+      transition: border-color 0.2s;
+    }
+ 
+    .resource-link:hover {
+      border-bottom-color: #64160e;
+    }
+ 
+    .resource-note {
+      font-size: 12px;
+      color: #777;
+      margin-top: 2px;
+    }
+ 
+    .bullet-list {
+      list-style: none;
+      padding-left: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+ 
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+ 
+    .bullet-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #64160e;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+ 
+    .steps-list {
+      padding-left: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+ 
+    .step-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+ 
+    .step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #64160e;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+ 
+    .step-text {
+      font-size: 14px;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+ 
+    .placeholder-tag {
+      display: inline-block;
+      background: #f5f5f5;
+      border: 0.5px dashed #bbb;
+      border-radius: 4px;
+      padding: 1px 8px;
+      font-size: 12px;
+      color: #888;
+      font-style: italic;
+    }
+ 
+    .page-footer {
+      margin-top: 3rem;
+      padding: 1.5rem 2rem;
+      border-top: 0.5px solid #e5e5e5;
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+  </head>
+  <body>
+
+    
+<div class=:"ma-hero">
+  <a href= "index.html" class = "back-link">
+    <i class = "ti ti-arrow-left"></i>
+    All Certifications
+  </a>
+  <div class = "cert-badge" >AED Resource Hub</div>
+
+  <h1 class = "ma-title">Medical Assistant</h1>
+  <p class = "ma-subtitle">This page contains general information on how to study for the exam, study materials, what you can do with this certification, and how to register for the exam"</p>
+
+</div>
+
+    <div class="content-area">
+
+      <div class="section">
+        <div class ="section-header">
+          <div class="section-icon"><i class="ti ti-book-2"></i></div>
+
+          <h2 class ="section-title">Resources</h2>
+        </div>
+
+        <p class="section-desc">Practice Exams, flashcard decks, question banks, and common mistake breakdowns to hlpe you prep for the CCMA Exmaination.</p>
+        <ul class="resource-list">
+          <li>
+    <div>
+      <a href="#" class="resource link"><span class="placeholder-tag">Link coming soon</span>
+        -Practice Exam Bank </a>
+      <p class= "resource note">Full-length practice exams mirroring the CCMA/RMA format</p>
+    </div>
+          </li>
+
+          <li>
+            <div>
+
+              <a href="#" class="resource-link"><span class ="placeholder-tag">Link Coming Soon</span>
+                - Flashcard Decks </a>
+              <p class="resource-note"> Anki & Quizlet Flashcard decks covering Exam material ranging from Anatomy/Clinical Procedures/Insurance etc. </p>
+            </div>
+          </li>
+<li>
+          <div>
+            <a href="#" class="resource-link"><span class="placeholder-tag">Link coming soon</span> — Question Bank</a>
+            <p class="resource-note">Categorized questions by topic — great for targeted weak-area review</p>
+          </div>
+        </li>
+
+          <li>
+            <div>
+              <a href="#" class = "resource-link"><span class="placeholder-tag"> Linke Coming Soon </span>
+                - Common Mistakes Guide </a>
+
+              <p class="resource-note">Compiled list of frequently missed questions and how to avoid them</p>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class ="section">
+        <div class ="section-header">
+          <div class ="section-icon"> <i class=ti ti-strethoscope"></i></div>
+          <h2 class="section-title">What you can do with this cert</h2>
+        </div>
+        <p class="section-desc">What this certification opens up for you and how it fits into your pre-med path</p>
+
+        <ul class="bullet-list">
+          <li><span class="placeholder-tag">Add responsibility / role type here</span></li>
+            <li><span class="placeholder-tag">Add responsibility / role type here</span></li>
+        <li><span class="placeholder-tag">Add responsibility / role type here</span></li>
+        <li><span class="placeholder-tag">Add responsibility / role type here</span></li>
+      </ul>
+    </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon"><i class="ti ti-clipboard-check"></i></div>
+
+          <h2 class ="section-title">Howw to register for the exam</h2>
+        </div>
+        
+        <p class = "section desc"> Here is how you can register for the NHA CCMA exam:</p>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class = "step-num">1</div>
+            <div class="step-text"><span class="placeholder-tag">Add registration steps here</span></div>
+            
+          </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-text"><span class="placeholder-tag">Add registration step here</span></div>
+          
+          </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-text"><span class="placeholder-tag">Add registration step here</span></div>
+</div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-text"><span class="placeholder-tag">Add registration step here — or link to a PDF guide</span></div>
+
+        </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer"> Want to be added to the certifications directory? Reach out to Omar Rahman on academics committee via text at 757-910-2708! 
+    </div>
+</body>
+</html>
+
+    
+      
+          
+
+                                                                                      
+  </body>
+  
+  
+
+
 
